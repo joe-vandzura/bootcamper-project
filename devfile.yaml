@@ -5,7 +5,7 @@ projects:
   - name: java-companion-project
     git:
       remotes:
-        origin: "https://github.com/Mbd06b/bootcamper-project.git"
+        origin: "https://github.com/joe-vandzura/bootcamper-project.git"
         
 attributes:
   controller.devfile.io/devworkspace-config:

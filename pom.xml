@@ -13,25 +13,25 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.boot.version>2.6.0</spring.boot.version>
 	</properties>
-	<repositories>
-		<repository>
-			<id>github</id>
-			<name>GitHub Mbd06b Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/Mbd06b/bootcamper-project</url>
-		</repository>
-	</repositories>
-	<distributionManagement>
-		<repository>
-			<id>github</id>
-			<name>Releases</name>
-			<url>https://maven.pkg.github.com/Mbd06b/bootcamper-project</url>
-		</repository>
-		<snapshotRepository>
-			<id>github</id>
-			<name>Snapshot</name>
-			<url>https://maven.pkg.github.com/Mbd06b/bootcamper-project</url>
-		</snapshotRepository>
-	</distributionManagement>
+<!--	<repositories>-->
+<!--		<repository>-->
+<!--			<id>github</id>-->
+<!--			<name>GitHub Mbd06b Apache Maven Packages</name>-->
+<!--			<url>https://maven.pkg.github.com/Mbd06b/bootcamper-project</url>-->
+<!--		</repository>-->
+<!--	</repositories>-->
+<!--	<distributionManagement>-->
+<!--		<repository>-->
+<!--			<id>github</id>-->
+<!--			<name>Releases</name>-->
+<!--			<url>https://maven.pkg.github.com/Mbd06b/bootcamper-project</url>-->
+<!--		</repository>-->
+<!--		<snapshotRepository>-->
+<!--			<id>github</id>-->
+<!--			<name>Snapshot</name>-->
+<!--			<url>https://maven.pkg.github.com/Mbd06b/bootcamper-project</url>-->
+<!--		</snapshotRepository>-->
+<!--	</distributionManagement>-->
   	
 	<dependencyManagement>
 		<dependencies>
@@ -52,10 +52,10 @@
 		<module>web-automation-testing</module>
 		<module>activities</module>
 		<module>docs</module>
-		<module>mgl-webapp</module>
-		<module>mgl-webapp_task1-0</module>
-		<module>mgl-webapp_task2-0</module>
-		<module>mgl-webapp_task2-1</module>
+<!--		<module>mgl-webapp</module>-->
+<!--		<module>mgl-webapp_task1-0</module>-->
+<!--		<module>mgl-webapp_task2-0</module>-->
+<!--		<module>mgl-webapp_task2-1</module>-->
 		<module>mgl-webapp_review</module>	
 	</modules>
 </project>
