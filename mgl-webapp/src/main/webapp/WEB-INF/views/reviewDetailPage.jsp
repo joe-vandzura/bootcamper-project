@@ -21,24 +21,24 @@
     <body>
        <mgl:myNav/>
         <br>
-        <h2 class="text-light">Submitted Review Information</h2>
+        <h2 class="text-light">Review Information</h2>
         <table class="table table-dark text-light">
             <tr>
                 <td>ReviewBody</td>
                 <td>
-                    <p>${submittedReview.reviewBody}</p>
+                    <p>${review.body}</p>
                 </td>
             </tr>
             <tr>
                 <td>Author</td>
                 <td>
-                    <p>${submittedReview.author}</p>
+                    <p>${review.author}</p>
                 </td>
             </tr>
             <tr>
                 <td>Rating</td>
                 <td>
-                    <p>${submittedReview.rating}</p>
+                    <p>${review.rating}</p>
                 </td>
             </tr>
         </table>
