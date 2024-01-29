@@ -2,18 +2,19 @@ package com.organization.bootcamp.mvcproject.api.service;
 
 import java.util.List;
 
+import com.organization.bootcamp.mvcproject.api.model.Game;
 import com.organization.mvcproject.model.GameImpl;
 
 public interface GameService {
 
-	List<GameImpl> retrieveAllGames();
+	List<Game> retrieveAllGames();
 
-	GameImpl saveGame(GameImpl game);
+	Game saveGame(Game game);
 
-	Boolean updateGame(GameImpl game);
+	Boolean updateGame(Game game);
 
-	Boolean deleteGame(GameImpl game);
+	Boolean deleteGame(Game game);
 
-	GameImpl findById(Long id);
+	Game findById(Long id);
 
 }

@@ -1,7 +1,5 @@
 package com.organization.bootcamp.mvcproject.api.model;
 
-import com.organization.mvcproject.model.GameImpl;
-
 public interface Review {
 
     Long getId();

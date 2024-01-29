@@ -3,40 +3,50 @@ package com.organization.mvcproject.service;
 import java.util.List;
 
 import com.organization.bootcamp.mvcproject.api.service.GameService;
-import com.organization.mvcproject.dao.GameDaoImpl;
+import com.organization.bootcamp.mvcproject.api.dao.GameDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.organization.mvcproject.model.GameImpl;
+import com.organization.bootcamp.mvcproject.api.model.Game;
 
 @Service("gameService")
 public class GameServiceImpl implements GameService {
 
 	@Autowired
-	private GameDaoImpl gameDao;
+	private GameDao gameDao;
 
 	@Override
-	public List<GameImpl> retrieveAllGames() {
+	public List<Game> retrieveAllGames() {
 		return gameDao.retrieveAllGames();
 	}
 
 	@Override
-	public GameImpl saveGame(GameImpl game) {
-		return gameDao.saveGame(game);
+	public Game saveGame(Game game) {
+		List<Game> allGames = retrieveAllGames();
+		boolean updated = false;
+		for (int i = 0; i < allGames.size(); i++) {
+			if (game.getName().equals(allGames.get(i).getName())) {
+				updated = updateGame(game);
+			}
+		}
+		if (!updated) {
+			gameDao.saveGame(game);
+		}
+		return game;
 	}
 
 	@Override
-	public Boolean updateGame(GameImpl game) {
+	public Boolean updateGame(Game game) {
 		return gameDao.updateGame(game);
 	}
 
 	@Override
-	public Boolean deleteGame(GameImpl game) {
+	public Boolean deleteGame(Game game) {
 		return gameDao.deleteGame(game);
 	}
 
 	@Override
-	public GameImpl findById(Long id) {
+	public Game findById(Long id) {
 		return gameDao.findById(id);
 	}
 }

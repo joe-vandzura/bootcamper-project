@@ -1,7 +1,7 @@
 package com.organization.mvcproject.controller;
 
-import com.organization.mvcproject.model.ReviewImpl;
-import com.organization.mvcproject.service.ReviewServiceImpl;
+import com.organization.bootcamp.mvcproject.api.service.ReviewService;
+import com.organization.bootcamp.mvcproject.api.model.Review;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -16,21 +16,21 @@ import org.springframework.web.servlet.ModelAndView;
 public class ReviewController {
 
     @Autowired
-    private ReviewServiceImpl reviewService;
+    private ReviewService reviewService;
 
 
     @PostMapping
-    public String addReview(ReviewImpl review, ModelMap model) {
+    public String addReview(Review review, ModelMap model) {
         if(review.getAuthor().equals("")) {
             review.setAuthor("anonymous");
         }
-        ReviewImpl newReview = reviewService.saveReview(review);
+        Review newReview = reviewService.saveReview(review);
         return "redirect:/reviews/" + newReview.getId();
     }
 
     @GetMapping("/{id}")
     public ModelAndView showReviewDetailsPage(@PathVariable(name = "id") Long reviewId, ModelMap model) {
-        ReviewImpl review = reviewService.findById(reviewId);
+        Review review = reviewService.findById(reviewId);
         return new ModelAndView("reviewDetailPage", "review", review);
     }
 

@@ -1,8 +1,8 @@
 package com.organization.mvcproject.service;
 
+import com.organization.bootcamp.mvcproject.api.dao.ReviewDao;
 import com.organization.bootcamp.mvcproject.api.service.ReviewService;
-import com.organization.mvcproject.dao.ReviewDaoImpl;
-import com.organization.mvcproject.model.ReviewImpl;
+import com.organization.bootcamp.mvcproject.api.model.Review;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,31 +12,31 @@ import java.util.List;
 public class ReviewServiceImpl implements ReviewService {
 
     @Autowired
-    private ReviewDaoImpl reviewDao;
+    private ReviewDao reviewDao;
 
 
     @Override
-    public List<ReviewImpl> retrieveAllReviews() {
+    public List<Review> retrieveAllReviews() {
         return null;
     }
 
     @Override
-    public ReviewImpl saveReview(ReviewImpl review) {
+    public Review saveReview(Review review) {
         return reviewDao.saveReview(review);
     }
 
     @Override
-    public Boolean updateReview(ReviewImpl review) {
+    public Boolean updateReview(Review review) {
         return null;
     }
 
     @Override
-    public Boolean deleteReview(ReviewImpl review) {
+    public Boolean deleteReview(Review review) {
         return null;
     }
 
     @Override
-    public ReviewImpl findById(Long id) {
+    public Review findById(Long id) {
         return reviewDao.findById(id);
     }
 }

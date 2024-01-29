@@ -11,6 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 import com.organization.bootcamp.mvcproject.api.service.GameService;
+import com.organization.mvcproject.model.GameImpl;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -25,7 +26,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import com.organization.mvcproject.model.GameImpl;
+import com.organization.bootcamp.mvcproject.api.model.Game;
 import com.organization.mvcproject.config.MvcConfiguration;
 
 @RunWith(JUnitPlatform.class)
@@ -39,23 +40,23 @@ class Game_Service_ImplTest {
 	@Autowired
 	private GameService gameServiceUnderTest;
 	
-	private static GameImpl testGame = createGame(1);
+	private static Game testGame = createGame(1);
 	
 	private  static final String TEST_GENRE = "Test Genre";
-	private static GameImpl createGame(Integer number) {
-		GameImpl game = new GameImpl();
+	private static Game createGame(Integer number) {
+		Game game = new GameImpl();
 		 game.setName("Testing Game Name " + String.valueOf(number));
 		 game.setGenre(TEST_GENRE);
 		 return game;
 	}
 	
-	private static List<GameImpl> gamesToRemoveAfterTest = new ArrayList<>();
+	private static List<Game> gamesToRemoveAfterTest = new ArrayList<>();
 	
 	@BeforeAll
 	@Test
 	void saveGameServiceSavesAndUpdatesGame() {
 		if(gamesToRemoveAfterTest.isEmpty()) {
-			GameImpl game = gameServiceUnderTest.saveGame(testGame);
+			Game game = gameServiceUnderTest.saveGame(testGame);
 			Assertions.assertNotNull(game.getId());
 			
 			//updates 
@@ -83,7 +84,7 @@ class Game_Service_ImplTest {
 	
 	@Test
   	void retrieveAllGamesServiceReturnsGames() {
-		List<GameImpl> games = gameServiceUnderTest.retrieveAllGames();
+		List<Game> games = gameServiceUnderTest.retrieveAllGames();
 		assertNotNull(games);
 		assertTrue(games.size() >= 2 );
 	}

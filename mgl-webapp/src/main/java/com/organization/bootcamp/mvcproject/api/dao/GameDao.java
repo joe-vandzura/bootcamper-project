@@ -1,17 +1,18 @@
 package com.organization.bootcamp.mvcproject.api.dao;
 
-import com.organization.mvcproject.model.GameImpl;
+import com.organization.bootcamp.mvcproject.api.model.Game;
 
 import java.util.List;
 
 public interface GameDao {
-    List<GameImpl> retrieveAllGames();
+    List<Game> retrieveAllGames();
 
-    GameImpl saveGame(GameImpl game);
+    Game saveGame(Game game);
 
-    Boolean updateGame(GameImpl game);;
+    Boolean updateGame(Game game);;
 
-    Boolean deleteGame(GameImpl game);
+    Boolean deleteGame(Game game);
 
-    GameImpl findById(Long id);
+    Game findById(Long id);
+
 }

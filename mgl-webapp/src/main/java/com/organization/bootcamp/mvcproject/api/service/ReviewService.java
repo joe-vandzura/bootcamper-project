@@ -1,20 +1,19 @@
 package com.organization.bootcamp.mvcproject.api.service;
 
-import com.organization.mvcproject.model.GameImpl;
-import com.organization.mvcproject.model.ReviewImpl;
+import com.organization.bootcamp.mvcproject.api.model.Review;
 
 import java.util.List;
 
 public interface ReviewService {
 
-    List<ReviewImpl> retrieveAllReviews();
+    List<Review> retrieveAllReviews();
 
-    ReviewImpl saveReview(ReviewImpl review);
+    Review saveReview(Review review);
 
-    Boolean updateReview(ReviewImpl review);
+    Boolean updateReview(Review review);
 
-    Boolean deleteReview(ReviewImpl review);
+    Boolean deleteReview(Review review);
 
-    ReviewImpl findById(Long id);
+    Review findById(Long id);
 
 }

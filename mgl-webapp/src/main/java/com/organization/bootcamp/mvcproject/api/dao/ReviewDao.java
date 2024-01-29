@@ -1,19 +1,18 @@
 package com.organization.bootcamp.mvcproject.api.dao;
 
 import com.organization.bootcamp.mvcproject.api.model.Review;
-import com.organization.mvcproject.model.ReviewImpl;
 
 import java.util.List;
 
 public interface ReviewDao {
 
-    List<ReviewImpl> retrieveAllReviews();
+    List<Review> retrieveAllReviews();
 
-    ReviewImpl saveReview(ReviewImpl review);
+    Review saveReview(Review review);
 
-    Boolean updateReview(ReviewImpl review);;
+    Boolean updateReview(Review review);;
 
-    Boolean deleteReview(ReviewImpl review);
+    Boolean deleteReview(Review review);
 
-    ReviewImpl findById(Long id);
+    Review findById(Long id);
 }
