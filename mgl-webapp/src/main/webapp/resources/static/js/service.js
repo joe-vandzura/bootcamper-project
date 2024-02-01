@@ -29,8 +29,8 @@ angular.module('MGL_Task1_app').factory('MGL_Task1_Service', ['$http', function(
 		function deleteGame(gameId) {
         			return $http.post(REST_SERVICE_URI + 'deleteGame', gameId).then(function(response) {
         					return response.data;
-        				}
-        			);
-        		}
+                }
+            );
+        }
 
 }]);
