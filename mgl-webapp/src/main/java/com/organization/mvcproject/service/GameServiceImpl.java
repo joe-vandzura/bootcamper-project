@@ -26,6 +26,7 @@ public class GameServiceImpl implements GameService {
 		boolean updated = false;
 		for (int i = 0; i < allGames.size(); i++) {
 			if (game.getName().equals(allGames.get(i).getName())) {
+				game.setId(allGames.get(i).getId());
 				updated = updateGame(game);
 			}
 		}
